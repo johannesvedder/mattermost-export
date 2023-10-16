@@ -99,7 +99,6 @@ html_template = """
         var displayHTML = "<h2>Channel Information</h2>";
         displayHTML += "<p><strong>Name:</strong> " + channelInfo.name + "</p>";
         displayHTML += "<p><strong>Display Name:</strong> " + channelInfo.display_name + "</p>";
-        displayHTML += "<p><strong>ID:</strong> " + channelInfo.id + "</p>";
         displayHTML += "<p><strong>Exported At:</strong> " + channelInfo.exported_at + "</p>";
         
         displayHTML += "<h2>Posts</h2>";
@@ -107,8 +106,6 @@ html_template = """
         for (var i = 0; i < posts.length; i++) {{
             var post = posts[i];
             displayHTML += "<li>";
-            displayHTML += "<p><strong>idx:</strong> " + post.idx + "</p>";
-            displayHTML += "<p><strong>id:</strong> " + post.id + "</p>";
             displayHTML += "<p><strong>Username:</strong> " + post.username + "</p>";
             displayHTML += "<p><strong>Created:</strong> " + post.created + "</p>";
             displayHTML += "<p><strong>Message:</strong> " + htmlDecode(post.message) + "</p>";
