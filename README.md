@@ -42,7 +42,7 @@ Before using this tool, ensure you have the following installed on your system:
 6. Run the export script using Python:
 
    ```shell
-   python mattermost-dl-viewer.py
+   python mattermost-viewer.py
    ```
 
 7. The script will prompt you to enter the path of the folder containing your exported chat data. If you press Enter
