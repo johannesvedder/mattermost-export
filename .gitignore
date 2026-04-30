@@ -2,3 +2,9 @@ config.json
 results/**
 
 .idea/**
+
+/bin
+/lib
+/lib64
+/get-pip.py
+/pyvenv.cfg

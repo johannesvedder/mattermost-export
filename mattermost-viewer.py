@@ -7,7 +7,8 @@ from datetime import datetime
 
 # Function to load chat data from a JSON file
 def load_chat_data(chat_dir):
-    json_files = glob.glob(os.path.join(chat_dir, "*.json"))
+    channelJsonFileName = chat_dir.split('/')[2]
+    json_files = glob.glob(os.path.join(chat_dir, channelJsonFileName + ".json"))
     if json_files:
         with open(json_files[0], "r", encoding="utf-8") as file:
             data = json.load(file)
@@ -91,7 +92,7 @@ html_template = """
         var selector = document.getElementById("chatSelector");
         var selectedChat = selector.value;
         var chatDisplay = document.getElementById("chatDisplay");
-        var chatDataObject = JSON.parse(chatData);
+        var chatDataObject = JSON.parse(chatData.replaceAll(/[\\u0000-\\u001F\\u007F-\\u009F]/g, ""));
         
         var channelInfo = chatDataObject[selectedChat]["channel"];
         var posts = chatDataObject[selectedChat]["posts"];
